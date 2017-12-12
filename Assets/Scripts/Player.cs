@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
 	public Transform SpawnPoints;
 	public bool Respawn=false;
+	public Helicopter heli;
 
 	private Transform[] spawnpoints;
 	private bool toggle = false;
@@ -18,6 +19,11 @@ public class Player : MonoBehaviour {
 	{
 		int i = Random.Range (1,spawnpoints.Length);
 		transform.position = spawnpoints [i].transform.position;
+	}
+
+	void OnFindClearArea()
+	{		
+		heli.Call ();
 	}
 
 	void Update () 
